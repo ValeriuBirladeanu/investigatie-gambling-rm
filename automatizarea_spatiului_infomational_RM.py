@@ -110,7 +110,7 @@ async def main():
     asp_data = await incarca_baza_date_asp()
     rezultate = []
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
+        browser = await p.chromium.launch(headless=True)
         context = await browser.new_context()
 
         # Tabel Consolă

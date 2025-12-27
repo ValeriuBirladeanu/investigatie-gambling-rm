@@ -1,6 +1,6 @@
 name: Executie Investigatie spațiului informațional al Republicii Moldova privind platformele de jocuri de noroc înregistrate în domeniul .md.
 
-# Acest workflow poate fi pornit doar manual (butonul pentru Viorel)
+# Acest workflow poate fi pornit doar manual
 on:
   workflow_dispatch:
 
@@ -14,16 +14,15 @@ jobs:
       - name: Configurare mediu Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12' # Versiunea folosita de tine local
+          python-version: '3.12'
 
       - name: Instalare librarii si Browser
         run: |
           pip install -r requirements.txt
           playwright install chromium --with-deps
 
-      - name: Rulare Motor de Analiza (Cele 5 Filtre)
-        # Folosim scriptul tau principal din repozitoriu
-        run: python automatizarea_spatiului_infomational_RM.py
+      - name: Rulare Motor de Analiza
+        run: xvfb-run python automatizarea_spatiului_infomational_RM.py
 
       - name: Salvare Raport Final (CSV)
         uses: actions/upload-artifact@v4
