@@ -1,0 +1,16 @@
+# Python - foldere de mediu virtual și cache
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# PyCharm - fișiere de configurare locală a IDE-ului
+.idea/
+
+# Rezultate - nu punem raportul CSV pe GitHub pentru a păstra repo-ul curat
+raport_investigatie.csv
+
+# Sistem de operare
+.DS_Store
+Thumbs.db
