@@ -1,0 +1,32 @@
+name: Executie Investigatie Criminalistica
+
+# Acest workflow poate fi pornit doar manual (butonul pentru Viorel)
+on:
+  workflow_dispatch:
+
+jobs:
+  run-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descarcare cod din repozitoriu
+        uses: actions/checkout@v4
+
+      - name: Configurare mediu Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12' # Versiunea folosita de tine local
+
+      - name: Instalare librarii si Browser
+        run: |
+          pip install -r requirements.txt
+          playwright install chromium --with-deps
+
+      - name: Rulare Motor de Analiza (Cele 5 Filtre)
+        # Folosim scriptul tau principal din repozitoriu
+        run: python automatizarea_spatiului_infomational_RM.py
+
+      - name: Salvare Raport Final (CSV)
+        uses: actions/upload-artifact@v4
+        with:
+          name: Rezultat-Analiza-Domenii
+          path: raport_investigatie_final.csv
