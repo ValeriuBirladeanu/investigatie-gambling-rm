@@ -28,12 +28,6 @@ playwright install chromium
 Rulare
 Executați scriptul principal pentru a genera raportul:
 
-Bash
-
-python investigator_Loteria_Moldovei.py
-📊 Exemple de Rezultate (Output)
-Sistemul generează o analiză multidimensională vizibilă direct în terminal, evaluând următoarele criterii:
-
 Analiză Infrastructură (SERVER): Detectează automat dacă site-ul folosește servicii de mascare a identității (ex: Cloudflare).
 
 Audit Servicii (TIP SERVICII): Clasifică platforma (Cazinou, Pariuri sau Informațional).
