@@ -15,17 +15,22 @@ Bash
 
 git clone https://github.com/ValeriuBirladeanu/investigatie-gambling-rm.git
 cd investigatie-gambling-rm
+
+
 Instalarea dependențelor:
 
 Bash
 
 pip install -r requirements.txt
+
 Configurarea browserului:
 
 Bash
 
 playwright install chromium
+
 Rulare
+
 Executați scriptul principal pentru a genera raportul:
 
 Analiză Infrastructură (SERVER): Detectează automat dacă site-ul folosește servicii de mascare a identității (ex: Cloudflare).
